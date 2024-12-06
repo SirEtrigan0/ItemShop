@@ -1,0 +1,21 @@
+shop-items:
+  diamond:
+    sell-item: DIAMOND_
+    sell-amount: 1
+    cost-item: GOLD_BLOCK
+    cost-amount: 64
+    slot: 13
+  
+  emerald:
+    sell-item: EMERALD
+    sell-amount: 1
+    cost-item: IRON_INGOT
+    cost-amount: 32
+    slot: 14
+  
+  netherite_ingot:
+    sell-item: NETHERITE_INGOT
+    sell-amount: 1
+    cost-item: DIAMOND
+    cost-amount: 512
+    slot: 15

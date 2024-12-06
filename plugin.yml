@@ -1,0 +1,8 @@
+name: ItemShop
+main: com.etrigan.ItemShopPlugin.ItemShop
+version: 1.0
+api-version: 1.21.3
+commands:
+  shop:
+    description: Opens the item shop
+    usage: /<command>

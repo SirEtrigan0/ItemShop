@@ -78,8 +78,8 @@ public class ItemShop extends JavaPlugin implements Listener {
             
             meta.setDisplayName("§bBuy " + shopItem.getSellAmount() + "x " + formatName(shopItem.getSellItem().name()));
             meta.setLore(Arrays.asList(
-                "§7Cost: " + shopItem.getCostAmount() + "x " + formatName(shopItem.getCostItem().name()),
-                "§eClick to purchase!"
+                Message.COST.toString() + shopItem.getCostAmount() + "x " + formatName(shopItem.getCostItem().name()),
+                Message.PURCH.toString()
             ));
             
             displayItem.setItemMeta(meta);
@@ -119,12 +119,12 @@ public class ItemShop extends JavaPlugin implements Listener {
             removeItems(player, costItems);
             player.getInventory().addItem(new ItemStack(shopItem.getSellItem(), shopItem.getSellAmount()));
             player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f, 1.0f);
-            player.sendMessage("§aSuccessfully purchased " + shopItem.getSellAmount() + "x " + 
+            player.sendMessage(Message.SUCS_PURCH.toString() + shopItem.getSellAmount() + "x " + 
                 formatName(shopItem.getSellItem().name()) + "!");
         } else {
             player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.0f, 1.0f);
-            player.sendMessage("§cYou need " + shopItem.getCostAmount() + "x " + 
-                formatName(shopItem.getCostItem().name()) + " to make this purchase!");
+            player.sendMessage(Message.MORE_MSG1.toString() + shopItem.getCostAmount() + "x " + 
+                formatName(shopItem.getCostItem().name()) + Message.MORE_MSG2.toString());
         }
     }
     
